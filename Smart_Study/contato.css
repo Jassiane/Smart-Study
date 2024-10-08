@@ -1,0 +1,45 @@
+
+
+#fale-conosco {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+#fale-conosco h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#fale-conosco form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#fale-conosco label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+#fale-conosco input, #fale-conosco textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#fale-conosco button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#fale-conosco button:hover {
+    background-color: #003366;
+}

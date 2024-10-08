@@ -1,0 +1,309 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;  /* Cinza Claro */
+    color: #333333;  /* Texto em Cinza Escuro */
+  }
+  
+  /* Estilo do cabeçalho */
+  .header {
+    background-color: #1E3A8A;  /* Azul Escuro */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-buttons button {
+    background-color: #38B2AC;  /* Verde Suave */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-buttons button:hover {
+    background-color: #319795;  /* Hover com um verde mais escuro */
+  }
+  
+  /* Seção principal (Home) */
+  section#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: #38B2AC;  /* Verde Suave */
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    margin: 1%;
+  }
+  
+  section#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #FFFFFF;  /* Texto em branco */
+  }
+  
+  section#home p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  section#home .btn {
+    background-color: #1E3A8A;  /* Azul Escuro */
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  section#home .btn:hover {
+    background-color: #2A4365;  /* Azul mais escuro no hover */
+  }
+  
+  /* Seção de professores */
+  .professores {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .caixa {
+    width: 200px;
+    height: 180px;
+    background-color: #FFFFFF;  /* Fundo Branco para caixas */
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .caixa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Contêiner de login */
+  .login-container {
+    background-color: #1E3A8A;  /* Azul Escuro */
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .login-container h2 {
+    color: #FFFFFF;  /* Título em branco */
+  }
+  
+  .login-container label {
+    display: block;
+    margin-top: 10px;
+    color: #FFFFFF;  /* Texto em branco */
+  }
+  
+  .login-container input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .login-container button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #38B2AC;  /* Botão em Verde Suave */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #319795;
+  }
+  
+  .login-container a {
+    color: #38B2AC;  /* Link em Verde Suave */
+    text-decoration: none;
+  }
+  
+  .login-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para caixas e botões */
+  .container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .container .caixa {
+    width: 200px;
+    height: 180px;
+    background-color: #FFFFFF;  /* Fundo Branco */
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .caixa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    section#home {
+      height: auto;
+    }
+    
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  #materials {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#materials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#materials p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+#materials ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#materials ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+#materials ul li a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+#materials ul li a:hover {
+    color: #ff9900;
+}
+
+/* Estilo da seção de Simulados */
+#simulados {
+    background-color: #e6f7ff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#simulados h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#simulados p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#simulados .btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#simulados .btn:hover {
+    background-color: #003366;
+}
+
+/* Estilo da seção de professores */
+.professores {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.professores h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.caixa {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.caixa img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    margin-left: 20px;
+    background-color: chartreuse;
+}
+
+/* Estilo da seção Fale Conosco */
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+  
