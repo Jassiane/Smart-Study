@@ -4,26 +4,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Login</title>
   <link href="cadastro.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <div class="row">
     <div class="col-md-12">
-      <form action="cadastro.php" method="post">
+      <form id="form-api">
         <h1> Login </h1>
         
         <fieldset>
-          <label for="email">Email:</label>
-          <input type="email" id="mail" name="email">
-       
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha">
-        </fieldset>
+          <input placeholder="usuario" name="usuario" type="text">
+          <input placeholder="senha" name="senha" type="password">
+          <input placeholder="usuario" name="usuario" type="text">
+        
         
         <button type="submit">Acessar</button>
       
       </form>
+      <script>
+        const formEl = document.getElementById('form-api')
+        formEl.addEventListener('submit', evento => {
+
+          const formData = new FormData(formEl);
+          const data = Object.fromEntries(formData);
+
+          console.log(data)
+        }
+      </script>
     </div>
   </div>
 </body>
