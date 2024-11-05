@@ -18,6 +18,7 @@
                 <label><input type="radio" name="q1" value="c"> c) 3</label><br>
                 <label><input type="radio" name="q1" value="d"> d) 4</label><br>
                 <label><input type="radio" name="q1" value="e"> e) 9</label><br>
+                <div id="feedback-q1"></div> <!-- Feedback -->
             </div>
 
             <div class="question">
@@ -34,6 +35,7 @@
                 <label><input type="radio" name="q2" value="c"> c) C</label><br>
                 <label><input type="radio" name="q2" value="d"> d) D</label><br>
                 <label><input type="radio" name="q2" value="e"> e) E</label><br>
+                <div id="feedback-q2"></div> <!-- Feedback -->
             </div>
 
             <div class="question">
@@ -44,22 +46,19 @@
                 <label><input type="radio" name="q3" value="c"> c) Um pela manhã, um à tarde e mais um à noite.</label><br>
                 <label><input type="radio" name="q3" value="d"> d) Apenas um à tarde.</label><br>
                 <label><input type="radio" name="q3" value="e"> e) Apenas um à noite.</label><br>
+                <div id="feedback-q3"></div> <!-- Feedback -->
             </div>
 
             <button type="submit">Enviar</button>
         </form>
-        <div id="mensagem" style="display: none;">
-            <h2>Bem-vindo!</h2>
-            <p id="mensagemUsuario"></p>
-        </div>
-        
+
         <div id="result"></div>
     </div>
 
     <script>
     document.getElementById('quiz-form').addEventListener('submit', function(event) {
         event.preventDefault();  // Previne o envio imediato do formulário
-        
+
         // Exibe o alerta de confirmação
         const userConfirmed = confirm("Você tem certeza de que deseja enviar o questionário?");
         
@@ -75,14 +74,20 @@
             let resultHtml = '';
             let allAnswered = true; // Nova variável para verificar se todas as perguntas foram respondidas
 
+            // Verifica cada questão e fornece feedback
             for (const [key, value] of Object.entries(correctAnswers)) {
                 const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                const feedbackElement = document.getElementById(`feedback-${key}`);
+
+                // Se o usuário respondeu a questão
                 if (userAnswer) {
                     if (userAnswer.value === value) {
                         score++;
-                        resultHtml += `<p>${key} - Correto!</p>`;
+                        feedbackElement.innerHTML = `<span class="correct">Correto!</span>`;
+                        feedbackElement.style.color = 'green';  // Exemplo de mudança de cor
                     } else {
-                        resultHtml += `<p>${key} - Incorreto! A resposta correta é ${value}.</p>`;
+                        feedbackElement.innerHTML = `<span class="incorrect">Incorreto! A resposta correta é ${value}.</span>`;
+                        feedbackElement.style.color = 'red';  // Exemplo de mudança de cor
                     }
                 } else {
                     resultHtml += `<p>${key} - Não respondido!</p>`;
@@ -101,16 +106,7 @@
             alert('Envio do questionário cancelado.');
         }
     });
-<?php
-
-$dbhost = 'localhost';
-$dbUserName = 'root';
-$dbPassword = '';
-$dbName = 'smart_study';
-
-$conexao = new mysql ($dbhost, $dbUserName, $dbPassword, $dbName)
-?>
-</script>
+    </script>
 
 </body>
 </html>
