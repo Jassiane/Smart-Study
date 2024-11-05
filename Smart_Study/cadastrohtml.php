@@ -1,36 +1,60 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Login</title>
-  <link href="cadastro.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com JavaScript</title>
+    <link rel="stylesheet" href="cadastro (1).css">
 </head>
 <body>
-  <div class="row">
-    <div class="col-md-12">
-      <form id="form-api">
-        <h1> Login </h1>
-        
-        <fieldset>
-          <input placeholder="usuario" name="usuario" type="text">
-          <input placeholder="senha" name="senha" type="password">
-          <input placeholder="usuario" name="usuario" type="text">
-        
-        
-        <button type="submit">Acessar</button>
-      
-      </form>
-      <script>
-        const formEl = document.getElementById('form-api')
-        formEl.addEventListener('submit', evento => {
+    <div class="container">
+        <h1>Realize seu cadastro</h1>
+    </div>
 
-          const formData = new FormData(formEl);
-          const data = Object.fromEntries(formData);
+<div id="formulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome">
+    <br>
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade">
+    <br>
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email">
+    <br>
 
-          console.log(data)
+    <button onclick="exibirMensagem()">Enviar</button>
+</div>
+
+<div id="mensagem" style="display: none;">
+    <h2>Bem-vindo!</h2>
+    <p id="mensagemUsuario"></p>
+</div>
+
+<script>
+    function exibirMensagem() {
+        var nome = document.getElementById('nome').value;
+        var idade = document.getElementById('idade').value;
+        var telefone = document.getElementById('telefone').value;
+        var email = document.getElementById('email').value;
+
+
+
+        // Verifica se ambos os campos foram preenchidos
+        if (nome === '' || idade === '' || telefone === '' || email === '') {
+            alert('Por favor, preencha todos os campos.');
+        } else {
+            // Oculta o formulário
+            document.getElementById('formulario').style.display = 'none';
+
+            // Exibe a mensagem de boas-vindas
+            document.getElementById('mensagemUsuario').innerText = 'Olá, ' + nome + '! Estudante, aqui você terá uma experiência incrível que te ajudará em sua vida academica, boa sorte nessa jornada';
+            
+            document.getElementById('mensagem').style.display = 'block';
         }
+    }
       </script>
     </div>
   </div>
