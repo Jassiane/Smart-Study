@@ -9,6 +9,13 @@
 </head>
 <body>
   <?php
+
+$dbhost = 'localhost';
+$dbUserName = 'root';
+$dbPassword = '';
+$dbName = 'smart_study';
+
+$conexao = new mysql ($dbhost, $dbUserName, $dbPassword, $dbName)
     $posicao = null;
     $usuarios = [
       [
