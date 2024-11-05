@@ -7,6 +7,15 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <?php
+
+$dbhost = 'localhost';
+$dbUserName = 'root';
+$dbPassword = '';
+$dbName = 'smart_study';
+
+$conexao = new mysql ($dbhost, $dbUserName, $dbPassword, $dbName)
+    ?>
         <div class="header">
             <div class="logo">
                 <img src="imagens.png/o-estudo-2.webp" alt="Logo" />
