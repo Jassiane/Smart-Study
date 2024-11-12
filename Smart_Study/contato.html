@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco</title>
+    <link rel="stylesheet" href="contato.css" />
+    <style>
+        #mensagemDeAgradecimento {
+            color: black; /* Define a cor da mensagem como preta */
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50; /* Cor de fundo verde */
+            color: white; /* Cor do texto em branco */
+            border: none; /* Sem borda */
+            padding: 10px 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+            text-decoration: none; /* Remove sublinhado */
+            display: inline-block; /* Permite definir largura e altura */
+            font-size: 16px; /* Tamanho da fonte */
+            margin: 4px 0; /* Margem em volta do botão */
+            cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+            width: 100%; /* Faz o botão ocupar toda a largura disponível */
+        }
+        button:hover {
+            background-color: #45a049; /* Cor de fundo ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+<section id="fale-conosco">
+    <h2>Fale Conosco</h2>
+    <div class="box">
+        <form id="contatoForm" onsubmit="enviarMensagem(event);">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <button onclick="window.location.href='index.html';">Voltar à Tela Inicial</button>
+    </div>
+</section>
+
+<script>
+    function enviarMensagem(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        var nome = document.getElementById("nome").value;
+        var mensagem = document.getElementById("mensagem").value;
+
+        // Validação da mensagem
+        if (mensagem.length < 20) {
+            alert("A mensagem deve ter pelo menos 20 caracteres.");
+            return; // Impede a execução do restante da função
+        }
+
+        // Exibe um alerta com a mensagem de agradecimento
+        alert("Obrigado, " + nome + " sua mensagem foi entregue.");
+
+        // Limpa o formulário após o envio
+        document.getElementById("contatoForm").reset();
+    }
+</script>
+
+</body>
+</html>
