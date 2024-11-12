@@ -1,8 +1,10 @@
-
+body{
+    background-color: #F4F4F4;
+}
 
 #fale-conosco {
     padding: 50px 20px;
-    background-color: #fff;
+    background-color: #F4F4F4;
 }
 
 #fale-conosco h2 {
@@ -43,3 +45,12 @@
 #fale-conosco button:hover {
     background-color: #003366;
 }
+
+.box{
+        background-color: white;
+        padding: 20px; /* Adiciona espaçamento interno */
+        border-radius: 8px; /* Adiciona bordas arredondadas */
+        max-width: 400px; /* Limita a largura da caixa */
+        margin: 20px auto; /* Centraliza a caixa na página */
+    
+    }
