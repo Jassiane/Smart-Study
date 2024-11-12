@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com JavaScript</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="formulario">
+        <script src="post.js"></script>
+        <form onsubmit="cadastroUsuario(event); exibirMensagem();">
+
+            <h1>Realize seu cadastro</h1>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <br><br>
+            <label for="nome">Nome:</label>
+            <input name="nome" id="nome" type="text" required>
+            <br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<div id="mensagem" style="display: none;">
+    <h2>Bem-vindo!</h2>
+    <p id="mensagemUsuario"></p>
+</div>
+
+<script>
+    function exibirMensagem() {
+        var nome = document.getElementById('nome').value;
+
+        // Verifica se o campo nome foi preenchido
+        if (nome === '') {
+            alert('Por favor, preencha todos os campos.');
+        } else {
+            // Oculta o formulário
+            document.getElementById('formulario').style.display = 'none';
+
+            // Exibe a mensagem de boas-vindas
+            document.getElementById('mensagemUsuario').innerText = 'Olá, ' + nome + '! Seja bem-vindo!';
+            document.getElementById('mensagem').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
