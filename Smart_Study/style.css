@@ -11,12 +11,15 @@ body {
   .header {
     background-color: #1E3A8A;  /* Azul Escuro */
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
-    margin: 10px;
+  
+    
+    position: fixed;
+    margin-top: -100px;
   }
   
   .logo {
@@ -36,6 +39,7 @@ body {
   .nav-buttons {
     display: flex;
     gap: 10px;
+    margin-right: 30px;
   }
   
   .nav-buttons button {
@@ -64,6 +68,7 @@ body {
     text-align: center;
     border-radius: 15px;
     margin: 1%;
+    margin-top: 100px;
   }
   
   section#home h1 {
@@ -200,6 +205,8 @@ body {
     padding: 50px 20px;
     background-color: white;
     text-align: center;
+    margin: 20px;
+    border-radius: 10px;
 }
 
 #materials h2 {
@@ -237,6 +244,9 @@ body {
     background-color: #e6f7ff;
     padding: 50px 20px;
     text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    
 }
 
 #simulados h2 {
@@ -267,6 +277,8 @@ body {
     background-color: #f0f0f0;
     padding: 50px 20px;
     text-align: center;
+    margin: 20px;
+    border-radius: 10px;
 }
 
 .professores h3 {
@@ -293,7 +305,7 @@ body {
     max-height: 150px;
     border-radius: 50%;
     margin-left: 20px;
-    background-color: chartreuse;
+    background-color:blue;
 }
 
 /* Estilo da seção Fale Conosco */
@@ -304,6 +316,58 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+}
+.caixa h2{
+  font-size: 22px;
+  text-align: center;
+}
+footer{
+  background-color: #1E3A8A;
+  padding: 0px;
+  margin:0;
+}
+.container-footer{
+  max-width: 1400px;
+  padding: 0 4%;
+  margin: 0px;
+ 
+}
+.row-footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.footer-col{
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 22px;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+}
+.footer-col ul{
+  list-style: none;
+}
+.footer-col ul li{
+  margin: 10px 0;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #cecdcd;
+  padding-left: 10px;
 }
 
   
