@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="simulado.css">
+    <link rel="stylesheet" href="stylees.css">
     <title>Questionário ENEM</title>
 </head>
 <body>
@@ -56,54 +56,68 @@
     </div>
 
     <script>
-    document.getElementById('quiz-form').addEventListener('submit', function(event) {
-        event.preventDefault();  // Previne o envio imediato do formulário
-
-        // Exibe o alerta de confirmação
-        const userConfirmed = confirm("Você tem certeza de que deseja enviar o questionário?");
+        document.getElementById('quiz-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Previne o envio imediato do formulário
         
-        // Se o usuário confirmar, prossegue com a verificação das respostas
-        if (userConfirmed) {
-            const correctAnswers = {
-                q1: 'd',
-                q2: 'd',
-                q3: 'a'
-            };
-
-            let score = 0;
-            let resultHtml = '';
-            let allAnswered = true; // Nova variável para verificar se todas as perguntas foram respondidas
-
-            // Verifica cada questão e fornece feedback
-            for (const [key, value] of Object.entries(correctAnswers)) {
-                const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
-                const feedbackElement = document.getElementById(`feedback-${key}`);
-
-                // Se o usuário respondeu a questão
-                if (userAnswer) {
-                    if (userAnswer.value === value) {
-                        score++;
-                        feedbackElement.innerHTML = `<span class="correct">Correto!</span>`;
-                        feedbackElement.style.color = 'green';  // Exemplo de mudança de cor
-                    } else {
-                        feedbackElement.innerHTML = `<span class="incorrect">Incorreto! A resposta correta é ${value}.</span>`;
-                        feedbackElement.style.color = 'red';  // Exemplo de mudança de cor
+            // Exibe o alerta de confirmação
+            const userConfirmed = confirm("Você tem certeza de que deseja enviar o questionário?");
+            
+            // Se o usuário confirmar, prossegue com a verificação das respostas
+            if (userConfirmed) {
+                const correctAnswers = {
+                    q1: 'd',
+                    q2: 'd',
+                    q3: 'a'
+                };
+        
+                let score = 0;
+                let resultHtml = '';
+                let allAnswered = true; // Nova variável para verificar se todas as perguntas foram respondidas
+        
+                // Primeiro, verifica se todas as perguntas foram respondidas
+                for (const [key, value] of Object.entries(correctAnswers)) {
+                    const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                    const feedbackElement = document.getElementById(`feedback-${key}`);
+        
+                    // Se o usuário não respondeu alguma questão
+                    if (!userAnswer) {
+                        allAnswered = false;
                     }
-                } else {
-                    resultHtml += `<p>${key} - Não respondido!</p>`;
-                    allAnswered = false; // Marca que nem todas as perguntas foram respondidas
                 }
+        
+                // Se todas as questões foram respondidas, o feedback é exibido
+                if (!allAnswered) {
+                    alert('Por favor, preencha todas as perguntas.');
+                } else {
+                    // Agora, mostra o feedback de cada questão
+                    for (const [key, value] of Object.entries(correctAnswers)) {
+                        const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                        const feedbackElement = document.getElementById(`feedback-${key}`);
+        
+                        // Se o usuário respondeu a questão
+                        if (userAnswer) {
+                            if (userAnswer.value === value) {
+                                score++;
+                                feedbackElement.innerHTML = `<span class="correct">Correto!</span>`;
+                                feedbackElement.style.color = 'green';  // Exemplo de mudança de cor
+                            } else {
+                                feedbackElement.innerHTML = `<span class="incorrect">Incorreto! A resposta correta é ${value}.</span>`;
+                                feedbackElement.style.color = 'red';  // Exemplo de mudança de cor
+                            }
+                        }
+                    }
+        
+                    // Exibe o resultado final
+                    resultHtml += `<p>Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.</p>`;
+                    document.getElementById('result').innerHTML = resultHtml;
+                }
+            } else {
+                // Se o usuário não confirmar, o envio é cancelado e o formulário não é enviado
+                alert('Envio do questionário cancelado.');
             }
-
-            if (!allAnswered) {
-                alert('Por favor, preencha todas as perguntas.');
-            }
-        } else {
-            // Se o usuário não confirmar, o envio é cancelado e o formulário não é enviado
-            alert('Envio do questionário cancelado.');
-        }
-    });
-    </script>
+        });
+        </script>
+        
 
 </body>
 </html>
