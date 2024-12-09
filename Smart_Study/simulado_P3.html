@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Atividades/simulado.css">
+    <title>Questionário ENEM - Parte 3</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Questionário ENEM - Parte 3</h1>
+        <form id="quiz-form">
+            <!-- Questão 11: Matemática -->
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>11</strong> - Matemática - Geometria</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Qual é a área de um triângulo que possui base de 10 cm e altura de 12 cm?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q11" value="A"> A) 60 cm².</label>
+                    <label><input type="radio" name="q11" value="B"> B) 100 cm².</label>
+                    <label><input type="radio" name="q11" value="C"> C) 120 cm².</label>
+                    <label><input type="radio" name="q11" value="D"> D) 150 cm².</label>
+                    <label><input type="radio" name="q11" value="E"> E) 180 cm².</label>
+                </div>
+                <div class="result" id="resultQ11"></div>
+            </div>
+
+            <!-- Questão 12: História -->
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>12</strong> - História - Brasil Colonial</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Qual foi a principal atividade econômica no Brasil durante o período colonial?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q12" value="A"> A) Extração de ouro.</label>
+                    <label><input type="radio" name="q12" value="B"> B) Cultivo de café.</label>
+                    <label><input type="radio" name="q12" value="C"> C) Extração de pau-brasil.</label>
+                    <label><input type="radio" name="q12" value="D"> D) Produção de açúcar.</label>
+                    <label><input type="radio" name="q12" value="E"> E) Pecuária.</label>
+                </div>
+                <div class="result" id="resultQ12"></div>
+            </div>
+
+            <!-- Questão 13: Física -->
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>13</strong> - Física - Eletricidade</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Uma lâmpada de 60 W está conectada a uma tensão de 120 V. Qual é a corrente elétrica que atravessa a lâmpada?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q13" value="A"> A) 0,25 A.</label>
+                    <label><input type="radio" name="q13" value="B"> B) 0,5 A.</label>
+                    <label><input type="radio" name="q13" value="C"> C) 1,0 A.</label>
+                    <label><input type="radio" name="q13" value="D"> D) 2,0 A.</label>
+                    <label><input type="radio" name="q13" value="E"> E) 4,0 A.</label>
+                </div>
+                <div class="result" id="resultQ13"></div>
+            </div>
+
+            <!-- Questão 14: Química -->
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>14</strong> - Química - Tabela Periódica</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Qual elemento químico possui o número atômico 8?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q14" value="A"> A) Carbono (C).</label>
+                    <label><input type="radio" name="q14" value="B"> B) Nitrogênio (N).</label>
+                    <label><input type="radio" name="q14" value="C"> C) Oxigênio (O).</label>
+                    <label><input type="radio" name="q14" value="D"> D) Flúor (F).</label>
+                    <label><input type="radio" name="q14" value="E"> E) Neônio (Ne).</label>
+                </div>
+                <div class="result" id="resultQ14"></div>
+            </div>
+
+            <!-- Questão 15: Sociologia -->
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>15</strong> - Sociologia - Estratificação Social</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>O que caracteriza a estratificação social em uma sociedade capitalista?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q15" value="A"> A) Igualdade de classes.</label>
+                    <label><input type="radio" name="q15" value="B"> B) Mobilidade social limitada.</label>
+                    <label><input type="radio" name="q15" value="C"> C) Divisão de classes com base na posse de capital.</label>
+                    <label><input type="radio" name="q15" value="D"> D) Prevalência de castas hereditárias.</label>
+                    <label><input type="radio" name="q15" value="E"> E) Ausência de desigualdade social.</label>
+                </div>
+                <div class="result" id="resultQ15"></div>
+            </div>
+
+            <div class="button-container">
+                <button type="button" onclick="mostrarResultadosParte3()">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <div id="finalResultParte3"></div>
+    <script>
+        
+        const correctAnswers = {
+            q11: 'A',
+            q12: 'D',
+            q13: 'B',
+            q14: 'C',
+            q15: 'C'
+        };
+
+        function mostrarResultadosParte3() {
+            let allAnswered = true;
+            let score = 0;
+
+            Object.keys(correctAnswers).forEach((questionName) => {
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const resultDiv = document.getElementById(`result${questionName.toUpperCase()}`);
+
+                if (!selectedAnswer) {
+                    allAnswered = false;
+                    resultDiv.innerHTML = '<p style="color: red;">Você não respondeu esta questão.</p>';
+                } else {
+                    if (selectedAnswer.value === correctAnswers[questionName]) {
+                        resultDiv.innerHTML = '<p style="color: green;">Resposta correta!</p>';
+                        score++;
+                    } else {
+                        resultDiv.innerHTML = `<p style="color: red;">Resposta errada! A resposta correta é ${correctAnswers[questionName]}.</p>`;
+                    }
+                }
+            });
+
+            if (!allAnswered) {
+                alert('Por favor, responda todas as questões antes de enviar.');
+                return;
+            }
+
+            const nota = ((score / 5) * 100).toFixed(2);
+
+            const finalResultElement = document.getElementById('finalResultParte3');
+            finalResultElement.innerHTML = `<p><strong>Você tirou ${nota} de 100.</strong></p>`;
+        }
+    </script>
+</body>
+</html>
