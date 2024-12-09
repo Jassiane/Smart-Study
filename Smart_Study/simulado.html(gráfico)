@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulado Enem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #F4F4F4;
+    }
+    .question {
+      margin: 20px 0;
+    }
+    .btn-submit {
+      margin-top: 20px;
+      background-color: #1E3A8A;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-submit:hover {
+      background-color: #2A4365;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simulado ENEM</h1>
+  <form id="quiz-form">
+    <!-- Pergunta 1 -->
+    <div class="question">
+      <label for="q1">1. Qual é a capital do Brasil?</label><br>
+      <input type="radio" name="q1" value="a"> Rio de Janeiro<br>
+      <input type="radio" name="q1" value="b"> São Paulo<br>
+      <input type="radio" name="q1" value="c"> Belo Horizonte<br>
+      <input type="radio" name="q1" value="d"> Brasília
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="question">
+      <label for="q2">2. Quem escreveu "Dom Casmurro"?</label><br>
+      <input type="radio" name="q2" value="a"> Machado de Assis<br>
+      <input type="radio" name="q2" value="b"> José de Alencar<br>
+      <input type="radio" name="q2" value="c"> Clarice Lispector<br>
+      <input type="radio" name="q2" value="d"> Raul Pompeia
+    </div>
+
+    <!-- Pergunta 3 -->
+    <div class="question">
+      <label for="q3">3. Qual é o maior planeta do sistema solar?</label><br>
+      <input type="radio" name="q3" value="a"> Júpiter<br>
+      <input type="radio" name="q3" value="b"> Saturno<br>
+      <input type="radio" name="q3" value="c"> Urano<br>
+      <input type="radio" name="q3" value="d"> Netuno
+    </div>
+
+    <button type="button" class="btn-submit" onclick="verificarRespostas()">Enviar Respostas</button>
+  </form>
+
+  <script>
+    function verificarRespostas() {
+      // Exibe o alerta de confirmação antes de enviar
+      const userConfirmed = confirm("Você tem certeza de que deseja enviar o questionário?");
+      
+      if (userConfirmed) {
+        const correctAnswers = {
+          q1: 'd',  // Resposta correta para a pergunta 1
+          q2: 'd',  // Resposta correta para a pergunta 2
+          q3: 'a'   // Resposta correta para a pergunta 3
+        };
+
+        let score = 0;
+        let resultHtml = '';
+        let allAnswered = true; // Verifica se todas as perguntas foram respondidas
+
+        // Verifica se todas as perguntas foram respondidas
+        for (const [key, value] of Object.entries(correctAnswers)) {
+          const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+          const feedbackElement = document.getElementById(`feedback-${key}`);
+
+          if (!userAnswer) {
+            allAnswered = false;
+          }
+        }
+
+        if (!allAnswered) {
+          alert('Por favor, preencha todas as perguntas.');
+        } else {
+          // Verifica cada questão
+          for (const [key, value] of Object.entries(correctAnswers)) {
+            const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+
+            if (userAnswer) {
+              if (userAnswer.value === value) {
+                score++;
+              }
+            }
+          }
+
+          // Armazena os acertos e erros no localStorage
+          const erros = Object.keys(correctAnswers).length - score;
+          localStorage.setItem('acertos', score);
+          localStorage.setItem('erros', erros);
+
+          // Redireciona para a página do gráfico
+          window.location.href = 'grafico.html';
+        }
+      } else {
+        alert('Envio do questionário cancelado.');
+      }
+    }
+  </script>
+
+</body>
+</html>
