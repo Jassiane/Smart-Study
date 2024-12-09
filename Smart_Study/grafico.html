@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Desempenho</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #F4F4F4;
+    }
+    #graficoDesempenho {
+      max-width: 400px;
+      max-height: 400px;
+      width: 100%;
+    }
+    .btn-voltar {
+      margin-top: 20px;
+      background-color: #1E3A8A;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-voltar:hover {
+      background-color: #2A4365;
+    }
+    .gabarito {
+      margin-top: 40px;
+      font-size: 1rem;
+    }
+    .gabarito .question {
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gráfico de Desempenho</h1>
+  <canvas id="graficoDesempenho"></canvas>
+  <button class="btn-voltar" onclick="window.location.href='index.html'">Voltar ao início</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const acertos = parseInt(localStorage.getItem('acertos')) || 0;
+      const erros = parseInt(localStorage.getItem('erros')) || 0;
+
+      const ctx = document.getElementById('graficoDesempenho').getContext('2d');
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Acertos', 'Erros'],
+          datasets: [{
+            data: [acertos, erros],
+            backgroundColor: ['#38B2AC', '#F56565']
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Gabarito -->
+  <div class="gabarito">
+    <h2>Gabarito</h2>
+
+    <!-- Pergunta 1 -->
+    <div class="question">
+      <label for="q1">1. Qual é a capital do Brasil?</label><br>
+      <input type="radio" name="q1" value="a" disabled> Rio de Janeiro<br>
+      <input type="radio" name="q1" value="b" disabled> São Paulo<br>
+      <input type="radio" name="q1" value="c" disabled> Belo Horizonte<br>
+      <input type="radio" name="q1" value="d" checked disabled> Brasília (Resposta correta)
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="question">
+      <label for="q2">2. Quem escreveu "Dom Casmurro"?</label><br>
+      <input type="radio" name="q2" value="a" disabled> Machado de Assis<br>
+      <input type="radio" name="q2" value="b" disabled> José de Alencar<br>
+      <input type="radio" name="q2" value="c" disabled> Clarice Lispector<br>
+      <input type="radio" name="q2" value="d" checked disabled> Raul Pompeia (Resposta correta)
+    </div>
+
+    <!-- Pergunta 3 -->
+    <div class="question">
+      <label for="q3">3. Qual é o maior planeta do sistema solar?</label><br>
+      <input type="radio" name="q3" value="a" checked disabled> Júpiter (Resposta correta)<br>
+      <input type="radio" name="q3" value="b" disabled> Saturno<br>
+      <input type="radio" name="q3" value="c" disabled> Urano<br>
+      <input type="radio" name="q3" value="d" disabled> Netuno
+    </div>
+  </div>
+
+</body>
+</html>
