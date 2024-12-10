@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Login</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' media='screen' href='login.css'>
+</head>
+<body>
+	
+		<div id="login">
+			<h2>Login</h2>
+			<label for="login-email">Email do Usuário:</label>
+			<input type="text" id="login-email" name="login-email" placeholder="Digite seu nome de usuário">
+			<br>
+
+			<label for="login-senha">Senha:</label>
+			<input type="password" id="login-senha" name="login-senha" placeholder="Digite sua senha">
+			<br>
+
+			<button type="submit" id="login-btn">Entrar</button>
+			<p id="login-error" style="color: red;"></p> <!-- Mensagem de erro -->
+		
+
+			<div id="new-account">
+				<p>Não tem uma conta? <a href="cadastro.html" id="register-link">Crie uma agora</a>.</p>
+			</div>
+		</div>
+
+		<script src="login.js"></script>
+</body>
+</html>

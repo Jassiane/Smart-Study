@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>perfil</title>
+  <link rel="stylesheet" href="style_perfil.css">
+</head>
+<body>
+  <div id="wrapper">      
+    <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
+    <div class="menu">
+      <label class="menu-toggle" for="menu"><span>Toggle</span></label>
+      <ul>
+        <li>
+          <a href="cadastro/login.html">logout</a>
+        </li>
+        <li>
+          <a href="index.html">home</a>
+        </li>
+        <li>      
+          <label for="menu-3">Materiais</label>
+          <input type="checkbox" id="menu-3" name="menu-3" class="menu-checkbox">
+          <div class="menu">
+            <label class="menu-toggle" for="menu-3"><span>Toggle</span></label>
+            <ul>
+              <li>
+                <a href="materias/biologia.html">Biologia</a>
+              </li>
+              <li>
+                <a href="materias/matematica.html">Matemática</a>
+              </li>
+              <li>
+                <a href="materias/fisica.html">Física</a>
+              </li>
+              <li>
+                <a href="materias/quimica.html">Química</a>
+              </li>
+              <li>
+                <a href="materias/redacao.html">Redação</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <label for="menu-4">Simulado</label>
+          <input type="checkbox" id="menu-4" name="menu-4" class="menu-checkbox">
+          <div class="menu">
+            <label class="menu-toggle" for="menu-4"><span>Toggle</span></label>
+            <ul>
+              <li>
+                <a href="simulado/resultados.html">Resultados</a>
+              </li>
+              <li>
+                <a href="simulado/simulado_P1.html">Parte 1</a>
+              </li>
+              <li>
+                <a href="simulado/simulado_P2.html">Parte 2</a>
+              </li>
+              <li>
+                <a href="simulado/simulado_P3.html">Parte 3</a>
+              </li>
+            </ul>
+          </div>
+        </li> 
+        <li>
+          <a href="comunicados/contato.html">Fale Conosco</a>
+        </li>
+      </ul>
+    </div>
+    <div class="perfil-container">
+   
+      <img src="IMG/icons/perfil_usuario.jpg" alt="Foto de Perfil" class="profile-picture" id="profilePicture">
+      <div class="file-input">
+        <label for="fileInput">Escolha uma nova foto:</label>
+        <input type="file" id="fileInput" accept="image/*">
+      </div>
+  
+      <h2 id="profile-name">Nome: --</h2>
+      <p id="profile-age">Idade: --</p>
+      <p id="profile-phone">Telefone: --</p>
+      <p id="profile-email">Email: --</p>
+  </div>
+  
+  </div>
+    <script type="module" src="perfil.js"></script>
+</body>
+</html>

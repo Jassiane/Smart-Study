@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Atividades/simulado.css">
+    <title>Questionário ENEM - Parte 3</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Questionário ENEM - Parte 3</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>11</strong> - Matemática - Geometria</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Qual é a área de um triângulo que possui base de 10 cm e altura de 12 cm?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q11" value="A"> A) 60 cm².</label>
+                    <label><input type="radio" name="q11" value="B"> B) 100 cm².</label>
+                    <label><input type="radio" name="q11" value="C"> C) 120 cm².</label>
+                    <label><input type="radio" name="q11" value="D"> D) 150 cm².</label>
+                    <label><input type="radio" name="q11" value="E"> E) 180 cm².</label>
+                </div>
+                <div id="feedback-q11"></div>
+            </div>
+
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>12</strong> - História - Brasil Colonial</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Qual foi a principal atividade econômica no Brasil durante o período colonial?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q12" value="A"> A) Extração de ouro.</label>
+                    <label><input type="radio" name="q12" value="B"> B) Cultivo de café.</label>
+                    <label><input type="radio" name="q12" value="C"> C) Extração de pau-brasil.</label>
+                    <label><input type="radio" name="q12" value="D"> D) Produção de açúcar.</label>
+                    <label><input type="radio" name="q12" value="E"> E) Pecuária.</label>
+                </div>
+                <div class="result" id="resultQ12"></div>
+            </div>
+
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>13</strong> - Física - Eletricidade</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Uma lâmpada de 60 W está conectada a uma tensão de 120 V. Qual é a corrente elétrica que atravessa a lâmpada?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q13" value="A"> A) 0,25 A.</label>
+                    <label><input type="radio" name="q13" value="B"> B) 0,5 A.</label>
+                    <label><input type="radio" name="q13" value="C"> C) 1,0 A.</label>
+                    <label><input type="radio" name="q13" value="D"> D) 2,0 A.</label>
+                    <label><input type="radio" name="q13" value="E"> E) 4,0 A.</label>
+                </div>
+                <div id="feedback-q13"></div>
+            </div>
+
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>14</strong> - Química - Tabela Periódica</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>Qual elemento químico possui o número atômico 8?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q14" value="A"> A) Carbono (C).</label>
+                    <label><input type="radio" name="q14" value="B"> B) Nitrogênio (N).</label>
+                    <label><input type="radio" name="q14" value="C"> C) Oxigênio (O).</label>
+                    <label><input type="radio" name="q14" value="D"> D) Flúor (F).</label>
+                    <label><input type="radio" name="q14" value="E"> E) Neônio (Ne).</label>
+                </div>
+                <div id="feedback-q14"></div>
+            </div>
+
+            <div class="question">
+                <div class="question-header">
+                    <p><strong>15</strong> - Sociologia - Estratificação Social</p>
+                    <p>Ano: 2023 | Banca: INEP | Órgão: ENEM | Prova: INEP - 2023 - ENEM - Exame Nacional do Ensino Médio</p>
+                </div>
+                <p>O que caracteriza a estratificação social em uma sociedade capitalista?</p>
+
+                <div class="alternatives">
+                    <label><input type="radio" name="q15" value="A"> A) Igualdade de classes.</label>
+                    <label><input type="radio" name="q15" value="B"> B) Mobilidade social limitada.</label>
+                    <label><input type="radio" name="q15" value="C"> C) Divisão de classes com base na posse de capital.</label>
+                    <label><input type="radio" name="q15" value="D"> D) Prevalência de castas hereditárias.</label>
+                    <label><input type="radio" name="q15" value="E"> E) Ausência de desigualdade social.</label>
+                </div>
+                <div id="feedback-q15"></div>
+            </div>
+            <div id="finalResultParte3"></div>
+            <div class="button-container">
+                <button type="submit">Enviar</button>
+                <button type="button" onclick="verificarRespostas()">Resultados</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const userConfirmed = confirm("Você tem certeza de que deseja enviar o questionário?");
+            
+            
+            if (userConfirmed) {
+                const correctAnswers = {
+                    q11: 'A',
+                    q12: 'D',
+                    q13: 'B',
+                    q14: 'C',
+                    q15: 'C'
+                };
+        
+                let score = 0;
+                let resultHtml = '';
+                let allAnswered = true; 
+                
+                for (const [key, value] of Object.entries(correctAnswers)) {
+                    const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                    const feedbackElement = document.getElementById(`feedback-${key}`);
+        
+                    if (!userAnswer) {
+                        allAnswered = false;
+                    }
+                }
+        
+                if (!allAnswered) {
+                    alert('Por favor, preencha todas as perguntas.');
+                } else {
+                    for (const [key, value] of Object.entries(correctAnswers)) {
+                        const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                        const feedbackElement = document.getElementById(`feedback-${key}`);
+        
+                        if (userAnswer) {
+                            if (userAnswer.value === value) {
+                                score++;
+                                feedbackElement.innerHTML = `<span class="correct">Correto!</span>`;
+                                feedbackElement.style.color = 'green';  
+                            } else {
+                                feedbackElement.innerHTML = `<span class="incorrect">Incorreto! A resposta correta é ${value}.</span>`;
+                                feedbackElement.style.color = 'red'; 
+                            }
+                        }
+                    }
+        
+                    resultHtml += `<p>Você acertou ${score} de ${Object.keys(correctAnswers).length} perguntas.</p>`;
+                    document.getElementById('result').innerHTML = resultHtml;
+                }
+            } else {
+                alert('Envio do questionário cancelado.');
+            }
+        });
+        
+        function verificarRespostas() {
+      const userConfirmed = confirm("Você tem certeza de que deseja enviar o questionário?");
+      
+      if (userConfirmed) {
+        const correctAnswers = {
+            q11: 'A',
+            q12: 'D',
+            q13: 'B',
+            q14: 'C',
+            q15: 'C'
+        };
+
+        let score = 0;
+        let resultHtml = '';
+        let allAnswered = true; 
+
+        for (const [key, value] of Object.entries(correctAnswers)) {
+          const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+          const feedbackElement = document.getElementById(`feedback-${key}`);
+
+          if (!userAnswer) {
+            allAnswered = false;
+          }
+        }
+
+        if (!allAnswered) {
+        } else {
+          for (const [key, value] of Object.entries(correctAnswers)) {
+            const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+
+            if (userAnswer) {
+              if (userAnswer.value === value) {
+                score++;
+              }
+            }
+          }
+
+          const errosp3 = Object.keys(correctAnswers).length - score;
+          localStorage.setItem('acertosp3', score);
+          localStorage.setItem('errosp3', errosp3);
+
+          window.location.href = 'resultados.html';
+        }
+      } 
+    }
+    </script>
+</body>
+</html>

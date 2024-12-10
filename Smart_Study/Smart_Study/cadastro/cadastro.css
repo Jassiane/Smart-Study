@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor01: #1E3A8A;
+  --cor02: #2F4F7F;
+  --cor03: #2A4365;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffffff, var(--cor01));
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+#formulario {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#formulario h2 {
+  margin-bottom: 15px;
+  color: #1E3A8A;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#formulario label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+#formulario input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease;
+}
+
+#formulario input:focus {
+  border-color: #1E3A8A;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+#enviar {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: #1E3A8A;
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#enviar:hover {
+  background: #388e3c;
+  transform: translateY(-2px);
+}
+
+#enviar:active {
+  background: #2e7d32;
+  transform: translateY(1px);
+}
+
+#new-account {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+#new-account p {
+  font-size: 14px;
+  color: #555;
+}
+
+#register-link {
+  color: #1E3A8A;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#register-link:hover {
+  color: #1E3A8A;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  #formulario {
+      padding: 15px;
+  }
+
+  #formulario h2 {
+      font-size: 20px;
+  }
+
+  #formulario button {
+      font-size: 14px;
+      padding: 10px;
+  }
+
+  #periodo-escolar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  #periodo-escolar label {
+      margin-bottom: 5px;
+  }
+}

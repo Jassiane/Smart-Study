@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } 
+  
+  :root {
+    --cor01: #1E3A8A;
+    --cor02: #2F4F7F;
+    --cor03: #2A4365;
+    --cor04: #007BFF;
+
+    --cor05: #388e3c;
+    --cor06: #2e7d32;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffffff, var(--cor01));
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  #fale-conosco {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  #fale-conosco h2 {
+    margin-bottom: 15px;
+    color: var(--cor01);
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  #fale-conosco label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  #fale-conosco input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+  }
+  
+  #fale-conosco input:focus {
+    border-color: var(--cor01);
+    background: #fff;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+  }
+
+  #mensagem {
+    width: 100%;    
+    height: 200px;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    resize: none;
+    scrollbar-width: none;
+    transition: border-color 0.3s;
+}
+
+#mensagem:focus {
+    border-color: var(--cor01); 
+    outline: none;
+}
+
+#mensagem::placeholder {
+    color: #aaa; 
+    font-style: italic;
+}
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: var(--cor01);
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background: var(--cor05);
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background: var(--cor06);
+    transform: translateY(1px);
+  }
+  
+  @media (max-width: 480px) {
+    #fale-conosco {
+        padding: 15px;
+    }
+  
+    #fale-conosco h2 {
+        font-size: 20px;
+    }
+  
+    #fale-conosco button {
+        font-size: 14px;
+        padding: 10px;
+    }
+  }
+  

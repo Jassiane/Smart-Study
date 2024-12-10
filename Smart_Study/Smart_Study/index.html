@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+<head> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Study</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1 onclick="location.href='index.html'"> Smart Study</h1>
+            <div class="pesquisaContainer" id="searchContainer">
+                                
+                <input type="text" class="pesquisaInput" id="searchInput" onkeyup="searchMaterials()" placeholder="Pesquise por matéria..." />
+                <ul class="sugestoes" id="suggestions"></ul> 
+                <select class="tipos" id="materialType" onchange="searchMaterials()">
+                    <option value="">Todos os Tipos</option>
+                    <option value="texto">Texto</option>
+                    <option value="video">Vídeo</option>
+                    <option value="simulado">Simulado</option>
+                </select>
+            </div>
+        <nav>
+            <button onclick="location.href='cadastro/login.html'">Login</button>
+            <button onclick="location.href='cadastro/cadastro.html'">Cadastro</button>
+        
+        </nav>
+    </header>   
+    <button id="faleConosvobt" onclick="location.href='comunicados/contato.html'"><img src="IMG/icons/faleconosco.png" alt="interrogação"></button>
+
+   
+
+    <section id="home">
+        <h1>Bem-vindo ao Smart Study</h1>
+        <p>
+            A plataforma ideal para melhorar o desempenho nos vestibulares oferece materiais de estudo,
+            simulados e acompanhamento de especialistas, proporcionando acesso a recursos de alta qualidade para uma preparação eficaz.
+        </p>
+        <a href="#about" id="btn">Saiba Mais</a>
+    </section>
+
+    <!-- Seção de Materiais de Estudo -->
+    <section id="materials">
+        <h2>Materiais de Estudo</h2>
+        <p>Encontre materiais organizados por disciplina, com exercícios resolvidos e dicas de estudo.</p>
+        <ul>
+            <li><a href="materias/matematica.html">Matemática</a></li>
+            <li><a href="materias/fisica.html">Física</a></li>
+            <li><a href="materias/quimica.html">Química</a></li>
+            <li><a href="materias/biologia.html">Biologia</a></li>
+            <li><a href="materias/redacao.html">Redação</a></li>
+          
+                
+                <ul class="materiaisLista" id="materialsList">
+                    <li data-type="texto" data-content="Apostila de Matemática com exercícios resolvidos." data-keywords="matemática, matematica, exercicios, apostila, exercícios resolvidos, equações, trigonometria, algebra, álgebra, geometria, estatistica, estatística, matemática financeira,  matematica financeira, probabilidade, análise combinatória, analise combinatoria, geometria espacial, funções">
+                        <a href="materias/matematica.html">Matemática - Apostila</a>
+                    </li>
+                    <li data-type="video" data-content="Vídeo aula sobre funções." data-keywords="matemática, funções, vídeo, álgebra">
+                        <a href="#">Matemática - Vídeo Aula</a><!--link do video-->
+                    </li>
+                    <li data-type="simulado" data-content="Simulado de Matemática com questões de vestibular." data-keywords="matemática, matematica, simulado, vestibular, questões">
+                        <a href="#">Matemática - Simulado</a>
+                    </li>
+                    <li data-type="texto" data-content="Apostila de Física com conceitos básicos." data-keywords="física, fisica, conceitos, apostila, cinemática, dinâmica Termodinâmica, Calor, Energia, Física Moderna, Quântica, Física nuclear, Átomo, Ondulatória, Ondas, Frequência, Comprimento de onda, Som">
+                        <a href="materias/fisica.html">Física - Apostila</a>
+                    </li>
+                    <li data-type="video" data-content="Vídeo aula sobre leis de Newton." data-keywords="física, conceitos, apostila, cinemática, dinâmica Termodinâmica, Calor, Energia, Física Moderna, Quântica, Física nuclear, Átomo, Ondulatória, Ondas, Frequência, Comprimento de onda, Som video" >">
+                        <a href="#">Física - Vídeo Aula</a><!--link do video-->
+                    </li>
+                    <li data-type="simulado" data-content="Simulado de Física com questões de vestibular." data-keywords="física, simulado, vestibular">
+                        <a href="#">Física - Simulado</a>
+                    </li>
+                    <li data-type="texto" data-content="Apostila de Química com explicações e exercícios resolvidos." data-keywords="química, quimica, apostila, exercícios resolvidos, tabela periódica, reações químicas, química orgânica, equilíbrio químico, soluções, eletroquímica, cinética química, química ambiental, ácidos e bases">
+                        <a href="materias/quimica.html">Química - Apostila</a>
+                    </li>
+                    <li data-type="video" data-content="Vídeo aula sobre reações químicas e balanceamento." data-keywords="química, eletroquímica, cinética química, química ambiental, ácidos e bases video  aprendizado visual">
+                        <a href="materias/quimica.html">Química - Vídeo Aula</a><!--link do video-->
+                    </li>
+                    <li data-type="simulado" data-content="Simulado de Química com questões do ENEM e vestibulares." data-keywords="química, simulado, ENEM, vestibular, questões, prática">
+                        <a href="materias/quimica.html">Química - Simulado</a>
+                    </li>
+                    <li data-type="texto" data-content="Apostila de Redação com explicações e exercícios resolvidos." data-keywords="redacao, coesao competencia introducao dicas conclusao">
+                        <a href="materias/redacao.html">Redação - Apostila</a>
+                    </li>
+                    <li data-type="texto" data-content="Video Aula de Redação com explicações e exercícios resolvidos." data-keywords="redacao, coesao competencia introducao dicas conclusao video,desenvolvimento">
+                        <a href="materias/redacao.html">Redação - Video Aula</a>
+                    </li>
+                    <li data-type="texto" data-content="Apostila de Redação com explicações e exercícios resolvidos." data-keywords="redacao, simulado, ENEM,questoes">
+                        <a href="materias/redacao.html">Redação - Simulado</a>
+                    </li>
+                    <li data-type="texto" data-content="Apostila de Biologia com explicações e exercícios resolvidos." data-keywords="biologia,citologia,ecologia,meio ambiente,cadeia alimentar célula">
+                        <a href="materias/biologia.html">Biologia - Apostila</a>
+                    </li>
+                    <li data-type="texto" data-content="Video Aula de Biologia com explicações e exercícios resolvidos." data-keywords="biologia,citologia,ecologia,meio ambiente,cadeia alimentar célula video,DNA">
+                        <a href="materias/biologia.html">Biologia - Video Aula</a>
+                    </li>
+                    <li data-type="texto" data-content="Simulado de Biologia com explicações e exercícios resolvidos." data-keywords="biologia,citologia,questoes,ENEM,simulado">
+                        <a href="materias/biologia.html">Biologia - Simulado</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        </ul>
+    </section>
+
+
+
+    <!-- Seção de Simulados -->
+    <section id="simulados">
+        <h2>Simulados</h2>
+        <p>Teste seus conhecimentos com nossos simulados online e receba feedback detalhado.</p>
+        <a href="simulado/simulado_P1.html" id="btn">Fazer Simulado</a>
+    </section>
+
+    <!-- Seção Professores -->
+    <div id="professores">
+        
+        <div id="professor">
+            <a href="https://www.youtube.com/@ProfessorNoslen" target="_blank"><img src="https://optim.tildacdn.one/tild3866-6532-4331-b964-663861373234/-/resize/486x/-/format/webp/Noslen.png" alt="Professor Noslen" />
+            <h2> Português </h2></a>
+        </div>
+        <div id="professor">
+            <a href="https://www.youtube.com/@ProfessorGabrielCabral" target="_blank"><img src="IMG/professores/cabral.png" alt="Professor Cabral" />
+            <h2>Química</h2></a>
+        </div>
+        <div id="professor">
+            <a href="https://www.youtube.com/@sandrocuriodicasdemat" target="_blank"><img src="IMG/professores/sandro_curio.png" alt="Professor Sandro Curió" />
+            <h2>Matemática</h2></a>
+        </div>
+        <div id="professor">
+            <a href="https://www.youtube.com/@professorboaro" target="_blank"><img src="https://cdn-cnffb.nitrocdn.com/ZMVxzPoTgNjmbrxUviMOjDtFuERtCopj/assets/static/optimized/rev-b77cc85/wp-content/uploads/2021/08/boaro-azul.png" alt="Professor Boaro" />
+            <h2>Física</h2></a>
+        </div>
+        <div id="professor">
+            <a href="https://www.youtube.com/@paulojubilut" target="_blank"><img src="IMG/professores/jubilut.png" alt="Professor Jubilut" />
+            <h2>Biologia</h2></a>
+        </div>
+        <div id="professor">
+            <a href="https://www.youtube.com/@Geobrasil" target="_blank"><img src="IMG/professores/geobrasil.png" alt="Canal GeoBrasil" />
+            <h2>Geografia</h2></a>
+        </div>
+    </div>
+
+    <!--rodape-->
+    <footer id="footer">
+        <div id="footer-content">
+            <h2>Smart Study</h2>
+            <p>Transformando a maneira como você aprende.</p>
+            <ul id="footer-links">
+                <li><strong>Email:</strong> <a href="mailto:contato@smartstudy.com">contato@smartstudy.com</a></li>
+                <li><strong>Telefone:</strong> (83) 4002-8922</li>
+            </ul>
+            <div id="social-media">
+                <h3>Siga-nos nas redes sociais:</h3>
+                <ul>
+                    <img src="IMG/icons/facebook.png" alt="facebook"><li><a href="https://www.facebook.com/smartstudy">Facebook</a></li>
+                    <img src="IMG/icons/instagram.webp" alt="instagram"><li><a href="https://www.instagram.com/smartstudy">Instagram</a></li>
+                    <img src="IMG/icons/linkedin.jpg" alt="linkdin"><li><a href="https://www.linkedin.com/company/smartstudy">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer-bottom">
+            <p>© 2024 Smart Study. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+    function searchMaterials() {
+        const input = document.getElementById("searchInput").value.toLowerCase();
+        const selectedType = document.getElementById("materialType").value.toLowerCase();
+        const materials = document.querySelectorAll("#materialsList li");
+        const suggestions = document.getElementById("suggestions");
+
+        if (input.trim() !== "") {
+            suggestions.style.display = "block";
+        } else {
+            suggestions.style.display = "none";
+        }
+
+        suggestions.innerHTML = '';
+
+        const keywords = input.split(' ').filter(word => word.trim().length > 0);
+        let hasResults = false;
+
+        materials.forEach((item) => {
+            const text = item.textContent.toLowerCase();
+            const type = item.getAttribute("data-type").toLowerCase();
+            const content = item.getAttribute("data-content").toLowerCase();
+            const itemKeywords = item.getAttribute("data-keywords").toLowerCase();
+
+            const matchesKeywords = keywords.every(keyword =>
+                text.includes(keyword) || content.includes(keyword) || itemKeywords.includes(keyword)
+            );
+
+            if (matchesKeywords && (selectedType === "" || type === selectedType)) {
+                const suggestion = document.createElement("li");
+                suggestion.textContent = item.querySelector("a").textContent;
+                suggestion.onclick = () => window.location.href = item.querySelector("a").href;
+
+                suggestions.appendChild(suggestion);
+                hasResults = true;
+            }
+        });
+
+        if (hasResults) {
+            suggestions.style.display = "block";
+        } else {
+            suggestions.style.display = "none";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const suggestions = document.getElementById("suggestions");
+
+        searchInput.addEventListener("input", function () {
+            if (this.value.trim() !== "") {
+                suggestions.style.display = "block";
+            } else {
+                suggestions.style.display = "none";
+            }
+        });
+
+        document.addEventListener("click", function (event) {
+            const isInsideSearchContainer = document.getElementById("searchContainer").contains(event.target);
+            if (!isInsideSearchContainer) {
+                suggestions.style.display = "none";
+            }
+        });
+
+        suggestions.addEventListener("mousedown", function (event) {
+            event.preventDefault();
+        });
+    });
+</script>

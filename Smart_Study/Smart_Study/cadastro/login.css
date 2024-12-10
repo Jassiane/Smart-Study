@@ -1,0 +1,154 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+
+    --cor01: #1E3A8A;
+    --cor02: #2F4F7F;
+    --cor03: #2A4365;
+  
+    
+    }
+    
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #fff, var(--cor01));
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Tela de login */
+#login {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#login h2 {
+    margin-bottom: 20px;
+    color:#1E3A8A;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#login label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#login input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+#login input:focus {
+    border-color: #1E3A8A;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+#login button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background:#1E3A8A;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#login button:hover {
+    background: #388e3c;
+    transform: translateY(-2px);
+}
+
+#login button:active {
+    background: #2e7d32;
+    transform: translateY(1px);
+}
+
+#login p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #f44336; /* Para mensagens de erro */
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    #login {
+        padding: 20px;
+    }
+
+    #login h2 {
+        font-size: 20px;
+    }
+
+    #login button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+/* Esqueceu a senha */
+#forgot-password {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #1E3A8A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#forgot-password:hover {
+    color: #1E3A8A;
+    text-decoration: underline;
+}
+/* Área de Novo Cadastro */
+#new-account {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+#new-account p {
+    font-size: 14px;
+    color: #555;
+}
+
+#register-link {
+    color:#1E3A8A;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#register-link:hover {
+    color:#1E3A8A;
+    text-decoration: underline;
+}

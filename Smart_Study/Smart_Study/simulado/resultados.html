@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Finais</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #F4F4F4;
+      }
+      #graficoDesempenho {
+        max-width: 400px;
+        max-height: 400px;
+        width: 100%;
+      }
+      .btn-voltar {
+        margin-top: 20px;
+        background-color: #1E3A8A;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-voltar:hover {
+        background-color: #2A4365;
+      }
+      .gabarito {
+        margin-top: 40px;
+        font-size: 1rem;
+      }
+      .gabarito .question {
+        margin: 15px 0;
+      }
+    </style>
+<body>
+    <div class="container">
+        <h1>Gráfico de Desempenho</h1>
+  <canvas id="graficoDesempenho"></canvas>
+  <button class="btn-voltar" onclick="window.location.href='../perfil.html'">Voltar ao início</button>
+
+  <script src="gafico.js"></script>
+        <h1>Refazer o Questionário</h1>
+        <button class="btn-voltar" onclick="parte1()">Parte 1</button>
+        <button class="btn-voltar" onclick="parte2()">Parte 2</button>
+        <button class="btn-voltar" onclick="parte3()">Parte 3</button>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() 
+  {    
+    const acertosp1 = parseInt(localStorage.getItem('acertosp1')) || 0;
+    const errosp1 = parseInt(localStorage.getItem('errosp1')) || 0;
+    const acertosp2 = parseInt(localStorage.getItem('acertosp2')) || 0;
+    const errosp2 = parseInt(localStorage.getItem('errosp2')) || 0;
+    const acertosp3 = parseInt(localStorage.getItem('acertosp3')) || 0;
+    const errosp3 = parseInt(localStorage.getItem('errosp3')) || 0;
+
+    const acertos = acertosp1 +  acertosp2 +  acertosp3;
+    const erros = errosp1 + errosp2 + errosp3;
+
+    console.log('Acertos:', acertos);
+    console.log('Erros:', erros);
+
+    const ctx = document.getElementById('graficoDesempenho').getContext('2d');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Acertos', 'Erros'],
+        datasets: [{
+          data: [acertos, erros],
+          backgroundColor: ['#38B2AC', '#F56565']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  });
+ 
+
+        function parte1() {
+            localStorage.removeItem('respostas');
+            window.location.href = '../simulado/simulado_P1.html';
+        }
+        function parte2() {
+            localStorage.removeItem('respostas');
+            window.location.href = '../simulado/simulado_P2.html';
+        }
+        function parte3() {
+            localStorage.removeItem('respostas');
+            window.location.href = '../simulado/simulado_P3.html';
+        }
+    </script>
+</body>
+</html>

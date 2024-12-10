@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Atividades/redação.css">
+    <link rel="icon" href="#">
+    <title>Redação</title>
+</head> 
+
+<header> 
+    <h1 class="smartStudy" onclick="location.href='../index.html'">Smart Study</h1>
+    <p>
+        Tudo que você sempre quis saber sobre Redação no ENEM, em um único lugar 
+    </p>
+</header>
+ 
+<body>
+    <nav>
+        <ul>
+            <a href="matematica.html">Matemática</a>
+            <a href="fisica.html">Física</a>
+            <a href="quimica.html">Química</a>
+            <a href="biologia.html">Biologia</a>
+            <a href="../perfil.html">Inicio</a>
+        </ul>
+    </nav>
+    <main>
+        <h2 class="subtitulo" id="rd">O que seria uma Redação?</h2>
+            
+        <p>
+            Antes de começar uma redação, é fundamental definir o estilo de texto que você irá adotar, pois ele irá orientar o tom, a estrutura e o conteúdo da sua escrita. Para isso, primeiro identifique o tipo de redação que você precisa escrever: dissertativa, narrativa, descritiva ou expositiva. 
+        </p>
+            
+        <p>
+            A redação dissertativa, por exemplo, exige uma linguagem objetiva e argumentos claros para defender uma ideia, enquanto a narrativa permite um estilo mais criativo e fluido, com ênfase em contar uma história. Além disso, o tom do texto deve ser adequado ao público e à finalidade: um tom formal é essencial em textos acadêmicos e científicos, enquanto em textos mais informais, como narrativas pessoais, o tom pode ser mais descontraído.
+        </p>
+
+        <p>
+            A estrutura básica de uma redação envolve introdução, desenvolvimento e conclusão, sendo importante que cada parte cumpra seu papel de forma clara e coesa. No desenvolvimento, por exemplo, é necessário apresentar os argumentos ou detalhes da história, e na conclusão, reforçar a ideia central do texto. Ao definir o estilo, também é possível ajustar o ritmo da redação, alternando momentos de maior profundidade ou reflexão, conforme o objetivo. 
+            Esse processo de preparação vai ajudar a organizar as ideias e a garantir uma escrita mais eficaz e bem estruturada.
+        </p>
+
+        <div class="redacaoLocal" id="redacaoLocal">
+            <h2 class="subtitulo">Pratique</h2>
+            <form action="">
+                <input id="redacaoTitulo" name="redacaoTitulo" class="redacaoTitulo" placeholder="Escreva seu título por aqui...">
+                <textarea class="redacao" id="redacao" placeholder="Escreva sua redação aqui..."></textarea>
+                <button id="enviarRedacao" onclick="enviarRedacao(event)"><h2>Enviar redação</h2></button>
+            </form>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div id="footer-content">
+            <h2>Smart Study</h2>
+            <p>Transformando a maneira como você aprende.</p>
+            <ul id="footer-links">
+                <li><strong>Email:</strong> <a href="mailto:contato@smartstudy.com">contato@smartstudy.com</a></li>
+                <li><strong>Telefone:</strong> (83) 4002-8922</li>
+            </ul>
+            <div id="social-media">
+                <h3>Siga-nos nas redes sociais:</h3>
+                <ul>
+                    <li><img src="../IMG/icons/facebook.png" class="facebook" alt="facebook">    <a href="https://www.facebook.com/smartstudy">Facebook</a></li>
+                    <li><img src="../IMG/icons/instagram.webp" class="instagram" alt="instagram"><a href="https://www.instagram.com/smartstudy">Instagram</a></li>
+                    <li><img src="../IMG/icons/linkedin.jpg" class="linkdin" alt="linkdin"><a href="https://www.linkedin.com/company/smartstudy">LinkedIn</a></li>
+                </ul>
+
+                <script>
+                    function enviarRedacao(event) {
+                        event.preventDefault();
+                
+                        var redacaoTitulo = document.getElementById("redacaoTitulo").value;
+                        var redacao = document.getElementById("redacao").value;
+                
+                        // Verifica se o título está vazio
+                        if (redacaoTitulo.trim() === "") {
+                            alert("Por favor, preencha o título da redação.");
+                            return;
+                        }
+                
+                        // Verifica se a redação está vazia
+                        if (redacao.trim() === "") {
+                            alert("Por favor, escreva sua redação.");
+                            return;
+                        }
+                
+                        // Verifica se a redação tem menos de 150 caracteres
+                        if (redacao.length < 150) {
+                            alert("A redação deve ter pelo menos 150 caracteres.");
+                            return;
+                        }
+                
+                        alert("Obrigado, sua mensagem foi entregue.");
+                        document.getElementById("redacaoLocal").reset();
+                    }
+                </script>
